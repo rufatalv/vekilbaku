@@ -1,0 +1,13 @@
+@import './container.scss';
+.hero :global {
+    display: flex;
+    height: calc(100vh - 98px);
+    @include desktop {
+        height: calc(100vh - 220px);
+    }
+    background-image: url("../public/images/hero-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right center;
+    width: 100%;
+}

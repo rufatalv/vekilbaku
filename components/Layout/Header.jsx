@@ -62,33 +62,53 @@ export default function Header() {
         <div className="down">
           <div className="container down__inner">
             <ul className="menu">
-              <li>
+              <li className="menu__item">
                 <Link href="#" className="menu__item-link">
                   Əsas səhifə
                 </Link>
               </li>
-              <li>
+              <li className="menu__item">
                 <Link href="#" className="menu__item-link">
                   Haqqımda
                 </Link>
               </li>
-              <li>
+              <li className="menu__item dropdown">
                 <Link href="#" className="menu__item-link">
                   Hüquqi xidmətlər
                   <FontAwesomeIcon className="icon" icon={faChevronDown} />
                 </Link>
+                <ul className="dropdown__menu">
+                  <li>
+                    <a href="#">Mülki mübahisələr</a>
+                  </li>
+                  <li>
+                    <a href="#">Kommersiya mübahisələri</a>
+                  </li>
+                  <li>
+                    <a href="#">Cinayət işləri</a>
+                  </li>
+                  <li>
+                    <a href="#">İnzibati mübahisələr</a>
+                  </li>
+                  <li>
+                    <a href="#">Korporativ hüquqi yardım</a>
+                  </li>
+                  <li>
+                    <a href="#">Əmtəə nişanlarının dövlət qeydiyyatı</a>
+                  </li>
+                </ul>
               </li>
-              <li>
+              <li className="menu__item">
                 <Link href="#" className="menu__item-link">
                   Videoçarxlar
                 </Link>
               </li>
-              <li>
+              <li className="menu__item">
                 <Link href="#" className="menu__item-link">
                   Əlaqə
                 </Link>
               </li>
-              <li>
+              <li className="menu__item">
                 <Link href="#" className="menu__item-link">
                   Az
                   <FontAwesomeIcon className="icon" icon={faChevronDown} />

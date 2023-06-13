@@ -2,12 +2,16 @@
 .header :global {
     width: 100%;
     position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     .header__inner {
         display: flex;
         flex-direction: column;
-        transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-        
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        background: #fff;
         &.mobile {
             background: #443939;
         }
@@ -15,7 +19,7 @@
             button {
                 font-size: 24px;
                 display: block;
-                @include desktop{
+                @include desktop {
                     display: none;
                 }
                 width: 24px;
@@ -33,7 +37,7 @@
             align-items: center;
             img {
                 width: 100px;
-                height: auto;
+                height: 58px;
                 @include desktop {
                     width: auto;
                     height: auto;
@@ -87,6 +91,36 @@
                         font-size: 18px;
                         font-weight: 500;
                         color: #2c2c2c;
+                        &.dropdown {
+                            position: relative;
+                            &:hover {
+                                .dropdown__menu {
+                                    clip-path: inset(0 0 0 0);
+                                }
+                            }
+                        }
+                        .dropdown__menu {
+                            background: #fff;
+                            border-top: 2px solid #9a6b45;
+                            position: absolute;
+                            padding: 20px 20px 10px;
+                            width: 250px;
+                            cursor: auto;
+                            -webkit-clip-path: inset(0 0 100% 0);
+                            clip-path: inset(0 0 100% 0);
+                            transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+                            li {
+                                margin-bottom: 20px;
+                                a {
+                                    font-size: 18px;
+                                    &:hover {
+                                        color: #9a6b45;
+                                    }
+                                    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+                                    color: #444;
+                                }
+                            }
+                        }
                         &-link {
                             transition: all 0.5s ease-in-out;
                             color: #2c2c2c;
