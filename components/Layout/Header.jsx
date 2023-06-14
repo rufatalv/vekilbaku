@@ -2,7 +2,7 @@ import styles from "@/styles/Header.module.scss";
 import Link from "next/link";
 import logo from "@/public/images/header-logo.png";
 import logoIMG from "@/public/images/header-bg.png";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,14 +17,39 @@ import {
 
 export default function Header() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY >= 220) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   const openMenu = () => {
-    setIsMobileOpen(!isMobileOpen);
+    const isNarrowScreen = window.matchMedia("(max-width: 991px)").matches;
+    isNarrowScreen && setIsMobileOpen(!isMobileOpen);
+    !isNarrowScreen && setIsMobileOpen(false);
   };
+
+
   return (
     <header className={styles.header}>
-      <div className={`header__inner ${isMobileOpen ? "mobile" : ""}`}>
+      <div
+        className={`header__inner ${isMobileOpen ? "mobile" : ""} ${
+          scroll ? "scroll" : ""
+        }`}
+      >
         <div className="top container">
-          <Image src={isMobileOpen ? logoIMG : logo} alt="Logo" />
+          <div className="logoImage"></div>
           <button className="menu-btn" onClick={openMenu}>
             {isMobileOpen ? (
               <FontAwesomeIcon color="#fff" icon={faXmark} />
@@ -108,11 +133,19 @@ export default function Header() {
                   Əlaqə
                 </Link>
               </li>
-              <li className="menu__item">
+              <li className="menu__item lang-dropdown">
                 <Link href="#" className="menu__item-link">
                   Az
                   <FontAwesomeIcon className="icon" icon={faChevronDown} />
                 </Link>
+                <ul className="lang__menu">
+                  <li>
+                    <a href="#">EN</a>
+                  </li>
+                  <li>
+                    <a href="#">RU</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>

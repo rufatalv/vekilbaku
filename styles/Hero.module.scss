@@ -1,13 +1,87 @@
-@import './container.scss';
+@import "./container.scss";
 .hero :global {
     display: flex;
     height: calc(100vh - 98px);
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    @include tablet {
+        background-size: cover;
+        background-image: url("../public/images/hero-bg.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
     @include desktop {
         height: calc(100vh - 220px);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right center;
     }
-    background-image: url("../public/images/hero-bg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: right center;
+    background-image: url("../public/images/hero-mobile.jpg");
     width: 100%;
+    .container {
+        position: relative;
+    }
+    .text {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        left: 20px;
+        width: initial;
+        top: 24%;
+        @include desktop {
+            top: 50%;
+            gap: 24px;
+            width: 485px;
+            left: 0;
+        }
+        transform: translateY(-50%);
+        h1 {
+            font-size: 28x;
+            margin-bottom: 10px;
+            @include tablet {
+                font-size: 42px;
+                margin-bottom: 0;
+            }
+            font-family: var(--font-source);
+            color: #322828;
+            font-weight: 600;
+        }
+        p {
+            color: #322828;
+            margin-bottom: 16px;
+            @include desktop {
+                font-size: 24px;
+            }
+            @include tablet {
+                font-size: 22px;
+            }
+            font-size: 18px;
+        }
+        .btn {
+            margin-top: 10px;
+        }
+        button {
+            padding: 8px 35px;
+            font-size: 17px;
+            background: linear-gradient(90deg, #9a6b45, #d4b192);
+            box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.2);
+            @include tablet {
+                padding: 8px 43px;
+            }
+            @include desktop {
+                padding: 10px 52px;
+                font-size: 20px;
+            }
+            &:hover {
+                color: #9a6b45;
+                border-color: #9a6b45;
+                background: white;
+            }
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            border: 1px solid #9a6b45;
+            color: #fff;
+            cursor: pointer;
+        }
+    }
 }

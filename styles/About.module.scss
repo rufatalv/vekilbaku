@@ -1,0 +1,83 @@
+.about :global {
+    display: flex;
+    position: relative;
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("../public/images/haqqinda-bg.jpg");
+        background-repeat: no-repeat;
+        height: auto;
+        width: 100%;
+        background-size: cover;
+        z-index: 5;
+    }
+    .container {
+        z-index: 20;
+    }
+    .card {
+        margin-top: 65px;
+        margin-bottom: 120px;
+        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        background-color: #fcfcfc;
+        &__inner {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__left {
+            padding-left: 80px;
+            padding-top: 65px;
+            max-width: 570px;
+            .card__title {
+                font-weight: 600;
+                font-family: var(--font-source);
+                font-size: 30px;
+                color: #2c2c2c;
+                margin-bottom: 30px;
+            }
+            .card__text {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                p {
+                    font-size: 20px;
+                }
+            }
+        }
+        &__right {
+            padding: 20px;
+            img {
+                border-radius: 20px;
+                width: 400px;
+                height: 430px;
+                -o-object-fit: cover;
+                object-fit: cover;
+            }
+        }
+    }
+    button {
+        padding: 8px 35px;
+        font-size: 17px;
+        background: linear-gradient(90deg, #9a6b45, #d4b192);
+        box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.2);
+        @include tablet {
+            padding: 8px 43px;
+        }
+        @include desktop {
+            padding: 10px 52px;
+            font-size: 20px;
+        }
+        &:hover {
+            color: #9a6b45;
+            border-color: #9a6b45;
+            background: white;
+        }
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        border: 1px solid #9a6b45;
+        color: #fff;
+        cursor: pointer;
+    }
+}

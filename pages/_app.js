@@ -10,7 +10,7 @@ export const roboto = Roboto({
 });
 export const serif = Source_Serif_Pro({
   subsets: ["latin"],
-  variable: "--font-serif",
+  variable: "--font-source",
   weight: ["200", "300", "400", "600", "700", "900"],
 });
 export default function MyApp({ Component, pageProps }) {

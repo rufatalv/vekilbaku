@@ -1,5 +1,5 @@
+import { About, Hero } from "@/components/Home";
 import Head from "next/head";
-import Hero from "@/components/Hero/Hero";
 export default function Home() {
   return (
     <>
@@ -10,6 +10,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Hero />
+      <About />
     </>
   );
 }

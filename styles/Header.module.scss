@@ -6,6 +6,7 @@
     top: 0;
     left: 0;
     right: 0;
+    z-index: 50;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     .header__inner {
         display: flex;
@@ -14,8 +15,59 @@
         background: #fff;
         &.mobile {
             background: #443939;
+            @include desktop {
+                background: #fff;
+            }
+            .top {
+                .logoImage {
+                    width: 100px;
+                    height: 58px;
+                    background: url("../public/images/header-bg.png");
+                    background-size: cover;
+                }
+            }
+        }
+        &.scroll {
+            @include desktop {
+                background-color: #9a6b45;
+            }
+            .top {
+                color: #fff;
+                .logoImage {
+                    width: 100px;
+                    height: 58px;
+                    background-size: cover;
+                    @include desktop {
+                        width: 150px;
+                        background: url("../public/images/header-bg.png");
+                        height: 88px;
+                    }
+                }
+                .list__item {
+                    a {
+                        color: #fff;
+                    }
+                }
+                .icon {
+                    font-size: 18px;
+                    width: 16px;
+                    color: #fff;
+                }
+            }
         }
         .top {
+            // clip-path: inset(0 0 100% 0);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            .logoImage {
+                width: 100px;
+                height: 58px;
+                background: url("../public/images/header-logo.png");
+                background-size: cover;
+                @include desktop {
+                    width: 150px;
+                    height: 88px;
+                }
+            }
             button {
                 font-size: 24px;
                 display: block;
@@ -91,6 +143,35 @@
                         font-size: 18px;
                         font-weight: 500;
                         color: #2c2c2c;
+                        &.lang-dropdown {
+                            position: relative;
+                            &:hover {
+                                .lang__menu {
+                                    clip-path: inset(0 0 0 0);
+                                }
+                            }
+                        }
+                        .lang__menu {
+                            background: #fff;
+                            border-top: 2px solid #9a6b45;
+                            position: absolute;
+                            padding: 20px 20px 10px;
+                            cursor: auto;
+                            -webkit-clip-path: inset(0 0 100% 0);
+                            clip-path: inset(0 0 100% 0);
+                            transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+                            li {
+                                margin-bottom: 10px;
+                                a {
+                                    font-size: 18px;
+                                    &:hover {
+                                        color: #9a6b45;
+                                    }
+                                    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+                                    color: #444;
+                                }
+                            }
+                        }
                         &.dropdown {
                             position: relative;
                             &:hover {
