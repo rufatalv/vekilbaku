@@ -1,6 +1,7 @@
 import styles from "@/styles/About.module.scss";
 import image from "@/public/images/photo.jpg";
 import Image from "next/image";
+import Services from "./Services";
 
 export default function About() {
   return (
@@ -10,8 +11,8 @@ export default function About() {
         <div className="card">
           <div className="card__inner">
             <div className="card__left">
-              <h2 className="card__title">Vəkil Emin Kiçikbəyov haqqında</h2>
-              <div className="card__text">
+              <div className="card__text">Vəkil Emin Kiçikbəyov haqqında</div>
+              <div className="card__info">
                 <p>
                   Emin Kiçikbəyov ziyalı hüquqşünas ailəsində anadan olmuşdur.
                   Nərimanov rayon 82 nömrəli orta pilot məktəbini bitirmişdir.
@@ -28,15 +29,14 @@ export default function About() {
                   Hal-hazırda Vəkil kimi fəaliyyət göstərir.
                 </p>
               </div>
-              <div className="btn">
+              <div className="card__button">
                 <button>Ətraflı</button>
               </div>
             </div>
-            <div className="card__right">
-              <Image src={image} alt="Logo" />
-            </div>
+            <div className="card__right"></div>
           </div>
         </div>
+        <Services />
       </div>
     </div>
   );

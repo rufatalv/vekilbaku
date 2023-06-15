@@ -1,0 +1,21 @@
+@import "./container.scss";
+.services :global {
+    
+    .services__title {
+        margin-bottom: 45px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-family: var(--font-source);
+        font-size: 41px;
+        font-weight: 600;
+        color: #2c2c2c;
+        text-transform: uppercase;
+    }
+    .services__list {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}

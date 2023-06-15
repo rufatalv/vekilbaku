@@ -1,0 +1,36 @@
+@import "./container.scss";
+.services :global {
+    display: flex;
+    flex-basis: calc(100% / 3);
+    max-width: 100%;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    min-height: 305px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px #e4e4e4 solid;
+    border-radius: 8px;
+    padding: 22px;
+    @include mobilelg {
+        max-width: 387px;
+    }
+    img {
+        margin-bottom: 25px;
+    }
+    .service {
+        &__title {
+            color: #2c2c2c;
+            font-weight: 600;
+            font-family: var(--font-source);
+            margin-bottom: 50px;
+        }
+        &__description {
+            text-align: center;
+            color: #444;
+            margin-bottom: 30px;
+        }
+        &__link {
+            color: #d4b192;
+        }
+    }
+}

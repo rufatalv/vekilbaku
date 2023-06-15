@@ -40,7 +40,6 @@ export default function Header() {
     !isNarrowScreen && setIsMobileOpen(false);
   };
 
-
   return (
     <header className={styles.header}>
       <div
