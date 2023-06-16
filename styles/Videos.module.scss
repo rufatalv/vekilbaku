@@ -1,0 +1,66 @@
+@import "./container.scss";
+.videos :global {
+    padding-top: 4rem;
+    padding-bottom: 7.5rem;
+    position: relative;
+    .bg {
+        background: url("../public/images/videos-bg.jpg");
+        background-repeat: no-repeat;
+        height: auto;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover;
+        &::after {
+            background: rgba(255, 255, 255, 0.8);
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+    .container {
+        position: relative;
+        z-index: 10;
+    }
+    .videos {
+        &__title {
+            margin-bottom: 35px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            font-family: var(--font-source);
+            font-size: 41px;
+            font-weight: 600;
+            color: #2c2c2c;
+            text-transform: uppercase;
+        }
+        &__list{
+            gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            .video{
+                max-width: 385px;
+                flex-basis: calc(100% / 3);
+                background: #fff;
+                display: flex;
+                flex-direction: column;
+                &__text{
+                    padding: 22px 0 20px 20px;
+                    border: 1px #C4C4C4 solid;
+                }
+                h1{
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: #2c2c2c;
+                }
+            }
+        }
+    }
+}

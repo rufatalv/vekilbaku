@@ -87,7 +87,7 @@ export default function Header() {
           <div className="container down__inner">
             <ul className="menu">
               <li className="menu__item">
-                <Link href="#" className="menu__item-link">
+                <Link href="/" className="menu__item-link">
                   Əsas səhifə
                 </Link>
               </li>
@@ -97,28 +97,34 @@ export default function Header() {
                 </Link>
               </li>
               <li className="menu__item dropdown">
-                <Link href="#" className="menu__item-link">
+                <Link href="#services" scroll={true} className="menu__item-link">
                   Hüquqi xidmətlər
                   <FontAwesomeIcon className="icon" icon={faChevronDown} />
                 </Link>
                 <ul className="dropdown__menu">
                   <li>
-                    <a href="#">Mülki mübahisələr</a>
+                    <Link href="/services/service">Mülki mübahisələr</Link>
                   </li>
                   <li>
-                    <a href="#">Kommersiya mübahisələri</a>
+                    <Link href="/services/service">
+                      Kommersiya mübahisələri
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">Cinayət işləri</a>
+                    <Link href="/services/service">Cinayət işləri</Link>
                   </li>
                   <li>
-                    <a href="#">İnzibati mübahisələr</a>
+                    <Link href="/services/service">İnzibati mübahisələr</Link>
                   </li>
                   <li>
-                    <a href="#">Korporativ hüquqi yardım</a>
+                    <Link href="/services/service">
+                      Korporativ hüquqi yardım
+                    </Link>
                   </li>
                   <li>
-                    <a href="#">Əmtəə nişanlarının dövlət qeydiyyatı</a>
+                    <Link href="/services/service">
+                      Əmtəə nişanlarının dövlət qeydiyyatı
+                    </Link>
                   </li>
                 </ul>
               </li>

@@ -48,7 +48,7 @@ const SERVICES = [
 
 export default function Services() {
   return (
-    <div className={`${styles.services}`}>
+    <div className={`${styles.services}`} id="services">
       <div className="services__title">HÜQUQİ Xİdmətlər</div>
       <div className="services__list">
         {SERVICES &&

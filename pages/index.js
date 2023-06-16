@@ -1,4 +1,4 @@
-import { About, Hero } from "@/components/Home";
+import { About, Hero, Testimonials, Videos } from "@/components/Home";
 import Head from "next/head";
 export default function Home() {
   return (
@@ -11,6 +11,16 @@ export default function Home() {
       </Head>
       <Hero />
       <About />
+      <Videos />
+      <Testimonials />
+      {/* <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12157.449563795863!2d49.8745032!3d40.3786602!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d5b16f03049%3A0x8b233276e2e00004!2sAzure%20Business%20Center!5e0!3m2!1sru!2saz!4v1686914397432!5m2!1sru!2saz"
+        width="1440"
+        height="533"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe> */}
     </>
   );
 }
