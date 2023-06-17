@@ -7,6 +7,7 @@ export const roboto = Roboto({
   subsets: ["latin"],
   variable: "--font-roboto",
   weight: ["100", "300", "400", "500", "700", "900"],
+  style: ["italic", "normal"],
 });
 export const serif = Source_Serif_Pro({
   subsets: ["latin"],

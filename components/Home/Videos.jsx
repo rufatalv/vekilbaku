@@ -1,4 +1,4 @@
-import styles from "@/styles/Videos.module.scss";
+import styles from "@/styles/Home/Videos.module.scss";
 
 const VIDEOS = [
   {

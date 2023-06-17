@@ -1,4 +1,4 @@
-import styles from "@/styles/Header.module.scss";
+import styles from "@/styles/Layout/Header.module.scss";
 import Link from "next/link";
 import logo from "@/public/images/header-logo.png";
 import logoIMG from "@/public/images/header-bg.png";
@@ -92,7 +92,7 @@ export default function Header() {
                 </Link>
               </li>
               <li className="menu__item">
-                <Link href="#" className="menu__item-link">
+                <Link href="/about" className="menu__item-link">
                   Haqqımda
                 </Link>
               </li>

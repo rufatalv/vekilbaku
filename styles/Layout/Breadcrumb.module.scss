@@ -1,0 +1,51 @@
+.breadcrumb :global {
+    background-image: url("/images/breadcrumb.jpg");
+    background-repeat: no-repeat;
+    background-position: left;
+    position: relative;
+    background-size: cover;
+    text-align: center;
+    width: 100%;
+    .title {
+        text-align: center;
+        color: #fff;
+        position: relative;
+        font-size: 54px;
+        text-transform: uppercase;
+        font-family: var(--font-source);
+        font-weight: 600;
+        letter-spacing: 3px;
+    }
+    .breadcrumb {
+        display: flex;
+        .icon {
+            font-size: 13px;
+            transform: rotate(80deg) translateX(1px);
+            margin-left: 10px;
+            width: 13px;
+        }
+        &__inner {
+            z-index: 15;
+            position: relative;
+            display: flex;
+            padding: 40px 0;
+            align-items: center;
+            gap: 10px;
+            flex-direction: column;
+            ul {
+                display: flex;
+                li {
+                    display: flex;
+                    align-items: center;
+                    color: #fff;
+                    a {
+                        color: #fff;
+                    }
+                    &:nth-child(2) {
+                        margin-left: 13px;
+                    }
+                }
+            }
+        }
+    }
+}

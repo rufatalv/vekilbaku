@@ -1,4 +1,4 @@
-@import "./container.scss";
+@import "../container.scss";
 .header :global {
     width: 100%;
     position: fixed;
@@ -22,7 +22,7 @@
                 .logoImage {
                     width: 100px;
                     height: 58px;
-                    background: url("../public/images/header-bg.png");
+                    background: url("../../public/images/header-bg.png");
                     background-size: cover;
                 }
             }
@@ -39,7 +39,7 @@
                     background-size: cover;
                     @include desktop {
                         width: 150px;
-                        background: url("../public/images/header-bg.png");
+                        background: url("../../public/images/header-bg.png");
                         height: 88px;
                     }
                 }
@@ -61,7 +61,7 @@
             .logoImage {
                 width: 100px;
                 height: 58px;
-                background: url("../public/images/header-logo.png");
+                background: url("../../public/images/header-logo.png");
                 background-size: cover;
                 @include desktop {
                     width: 150px;

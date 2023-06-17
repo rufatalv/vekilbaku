@@ -1,0 +1,48 @@
+.error :global {
+    position: relative;
+    height: 100%;
+    .bg {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-image: url("/images/404-full.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 60% bottom;
+    }
+    .container {
+        padding-top: 80px;
+        padding-bottom: 160px;
+    }
+    .text {
+        position: relative;
+        z-index: 5;
+        .error {
+            font-size: 180px;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-source);
+            font-weight: 600;
+            color: #2c2c2c;
+        }
+        .notfound {
+            font-family: var(--font-source);
+            font-size: 20px;
+            color: #282828;
+            margin-bottom: 30px;
+        }
+        .btn {
+            background: linear-gradient(90deg, #9a6b45 0%, #d4b192 100%);
+            box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            font-family: var(--font-roboto);
+            font-style: normal;
+            padding: 10px 40px;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 36px;
+            text-align: center;
+            color: #ffffff;
+        }
+    }
+}

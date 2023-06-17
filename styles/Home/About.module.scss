@@ -1,4 +1,4 @@
-@import "./container.scss";
+@import "../container.scss";
 .about :global {
     display: flex;
     position: relative;
@@ -8,7 +8,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: url("../public/images/haqqinda-bg.jpg");
+        background-image: url("../../public/images/haqqinda-bg.jpg");
         background-repeat: no-repeat;
         height: auto;
         width: 100%;
@@ -21,7 +21,7 @@
     .card {
         margin-top: 4rem;
         margin-bottom: 7.5rem;
-        background-image: url("../public/images/haqqinda-card-bg.jpg");
+        background-image: url("../../public/images/haqqinda-card-bg.jpg");
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-position: top left;
@@ -45,7 +45,7 @@
             margin-bottom: 1.5rem;
         }
         &__right {
-            background: url("../public/images/photo.jpg");
+            background: url("../../public/images/photo.jpg");
             background-size: cover;
             max-width: 400px;
             height: 443px;

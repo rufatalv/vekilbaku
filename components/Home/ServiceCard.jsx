@@ -1,4 +1,4 @@
-import styles from "@/styles/ServicesCard.module.scss";
+import styles from "@/styles/Home/ServicesCard.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
 export default function ServiceCard({ data }) {

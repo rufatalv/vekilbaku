@@ -1,4 +1,4 @@
-import styles from "@/styles/About.module.scss";
+import styles from "@/styles/Home/About.module.scss";
 import image from "@/public/images/photo.jpg";
 import Image from "next/image";
 import Services from "./Services";

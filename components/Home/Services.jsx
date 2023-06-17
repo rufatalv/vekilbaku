@@ -1,4 +1,4 @@
-import styles from "@/styles/Services.module.scss";
+import styles from "@/styles/Home/Services.module.scss";
 import ServiceCard from "./ServiceCard";
 
 const SERVICES = [

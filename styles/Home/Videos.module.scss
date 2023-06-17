@@ -1,10 +1,10 @@
-@import "./container.scss";
+@import "../container.scss";
 .videos :global {
     padding-top: 4rem;
     padding-bottom: 7.5rem;
     position: relative;
     .bg {
-        background: url("../public/images/videos-bg.jpg");
+        background: url("../../public/images/videos-bg.jpg");
         background-repeat: no-repeat;
         height: auto;
         width: 100%;
@@ -40,22 +40,25 @@
             color: #2c2c2c;
             text-transform: uppercase;
         }
-        &__list{
+        &__list {
             gap: 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            .video{
+            img {
+                position: relative;
+            }
+            .video {
                 max-width: 385px;
                 flex-basis: calc(100% / 3);
                 background: #fff;
                 display: flex;
                 flex-direction: column;
-                &__text{
+                &__text {
                     padding: 22px 0 20px 20px;
-                    border: 1px #C4C4C4 solid;
+                    border: 1px #c4c4c4 solid;
                 }
-                h1{
+                h1 {
                     font-size: 20px;
                     font-weight: 500;
                     color: #2c2c2c;

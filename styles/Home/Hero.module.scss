@@ -1,4 +1,4 @@
-@import "./container.scss";
+@import "../container.scss";
 .hero :global {
     display: flex;
     height: calc(100vh - 98px);
@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     @include tablet {
         background-size: cover;
-        background-image: url("../public/images/hero-bg.jpg");
+        background-image: url("../../public/images/hero-bg.jpg");
         background-position: center;
         background-repeat: no-repeat;
     }
@@ -17,7 +17,7 @@
         background-size: cover;
         background-position: right center;
     }
-    background-image: url("../public/images/hero-mobile.jpg");
+    background-image: url("../../public/images/hero-mobile.jpg");
     width: 100%;
     .container {
         position: relative;
