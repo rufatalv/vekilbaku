@@ -1,5 +1,9 @@
 import Breadcrumb from "@/components/Layout/Breadcrumb";
 import Head from "next/head";
+import styles from "@/styles/About/About.module.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.min.css";
+import { Navigation, Pagination } from "swiper";
 
 export default function About() {
   return (
@@ -12,7 +16,108 @@ export default function About() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Breadcrumb title={'Haqqımda'} />
+      <Breadcrumb title={"Haqqımda"} />
+      <div className={styles.about}>
+        <div className="bg"></div>
+        <div className="container">
+          <div className="about__content">
+            <div className="about__info">
+              <div className="photo">
+                <img src="/images/haqqinda-portrait.png" alt="" />
+                <div className="photo__text">
+                  <h1>Emin Kiçikbəyov</h1>
+                  <p>Vəkil</p>
+                </div>
+              </div>
+              <div className="info">
+                <div className="info__up">
+                  <div className="title heading">BİOQRAFİYA</div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Tortor, ornare cursus fringilla tincidunt volutpat volutpat.
+                    Pulvinar sed lacus, vitae leo eu. Velit dui posuere mi nunc
+                    egestas sagittis adipiscing. Sit sodales felis at sed erat
+                    purus amet.
+                  </p>
+                  <p>
+                    Sed habitant amet, congue ut purus malesuada risus lorem.
+                    Velit dui posuere mi nunc egestas sagittis adipiscing. Sit
+                    sodales felis at sed erat purus amet.Pulvinar sed lacus,
+                    vitae leo eu. Velit dui posuere mi nunc egestas sagittis
+                    adipiscing. Sit sodales felis at sed erat purus amet.
+                    Pulvinar sed lacus, vitae leo eu. Velit dui posuere mi nunc
+                    egestas sagittis adipiscing. Sit sodales felis at sed erat
+                    purus amet.
+                  </p>
+                </div>
+                <div className="info__down">
+                  <div className="title heading">İŞ TƏCRÜBƏSİ</div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  </p>
+                  <p className="bold">Lorem ipsum dolor sit amet (2014-2016)</p>
+                </div>
+                <div className="info__buttons">
+                  <ul>
+                    <li>
+                      Qeydiyyat:
+                      <a href="tel:+994124095740">(+994) 12 409 57 40</a>
+                    </li>
+                    <li>
+                      Whatsapp:
+                      <a href="tel:+994554310401">(+994) 55 431 04 01</a>
+                    </li>
+                    <li>
+                      Ofis:
+                      <a href="tel:+994704310401">(+994) 70 431 04 01</a>
+                    </li>
+                    <li>
+                      Email:
+                      <a href="mailto:k.emin@vekilbaku.az ">
+                        k.emin@vekilbaku.az
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="about__video">
+            <div className="video__title">HÜQUQŞÜNAS EMİN KİÇİKBƏYOV</div>
+            <Swiper
+              className="swiper"
+              freeMode="true"
+              modules={[Pagination, Navigation]}
+              // navigation
+              // pagination={{ clickable: true }}
+              loop={true}
+              slidesPerView={3}
+              spaceBetween={20}
+            >
+              <div className="container">
+                <SwiperSlide className="swiperSlide">
+                  <img src="/images/1.jpg" alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="swiperSlide">
+                  <img src="/images/2.jpg" alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="swiperSlide">
+                  <img src="/images/3.jpg" alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="swiperSlide">
+                  <img src="/images/4.jpg" alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="swiperSlide">
+                  <img src="/images/5.jpg" alt="" />
+                </SwiperSlide>
+                <SwiperSlide className="swiperSlide">
+                  <img src="/images/6.jpg" alt="" />
+                </SwiperSlide>
+              </div>
+            </Swiper>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

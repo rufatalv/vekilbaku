@@ -134,7 +134,7 @@ export default function Header() {
                 </Link>
               </li>
               <li className="menu__item">
-                <Link href="#" className="menu__item-link">
+                <Link href="/contacts" className="menu__item-link">
                   Əlaqə
                 </Link>
               </li>

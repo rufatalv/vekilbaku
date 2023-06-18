@@ -25,7 +25,7 @@ export default function Footer() {
                 <Link href="#">Videoçarxlar</Link>
               </li>
               <li>
-                <Link href="#">Əlaqə</Link>
+                <Link href="/contacts">Əlaqə</Link>
               </li>
             </ul>
             <ul>
