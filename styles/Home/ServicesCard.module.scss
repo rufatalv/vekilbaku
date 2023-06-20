@@ -15,11 +15,9 @@
     & :global {
         transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         display: flex;
-        flex-basis: calc(100% / 3);
-        max-width: 100%;
         flex-direction: column;
-        width: 100%;
         align-items: center;
+        width: 100%;
         min-height: 305px;
         background-color: rgba(255, 255, 255, 0.5);
         border: 1px #e4e4e4 solid;
@@ -27,6 +25,9 @@
         padding: 23px 20px 28px 20px;
         @include mobilelg {
             max-width: 390px;
+        }
+        @include tablet {
+            flex: 0 0 48%;
         }
         img {
             margin-bottom: 25px;

@@ -2,7 +2,14 @@
 
 .contacts :global {
     position: relative;
-    background-color: #443939;
+    background: #fff;
+    @include tablet {
+        background-color: #443939;
+        align-items: start;
+    }
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
     .contacts__title {
         margin-bottom: 54px;
         margin-top: 64px;
@@ -15,50 +22,85 @@
         color: #d4b192;
         text-transform: uppercase;
     }
+    .title {
+        font-family: var(--font-source);
+        font-size: 30px;
+        display: block;
+        margin-top: 40px;
+        text-align: center;
+        order: 1;
+        @include tablet {
+            display: none;
+            font-size: 41px;
+        }
+        font-weight: 600;
+        color: #2c2c2c;
+        text-transform: uppercase;
+    }
     .iframe {
-        width: 100%;
+        text-align: center;
+        width: 315px;
+        border: 1px #c4c4c4 solid;
+        height: 268px;
+        display: none;
+        @include tablet {
+            display: block;
+            width: 100%;
+            height: 530px;
+            max-height: 530px;
+        }
         @include desktop {
             max-height: 530px;
         }
         border: 0;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
         z-index: 5;
     }
     .iframe__text {
-        position: absolute;
+        z-index: 8;
         display: none;
-        box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.1);
-        padding-left: 42px;
-        padding-top: 48px;
-        padding-bottom: 48px;
-        @include desktop {
+        @include tablet {
             display: flex;
+
+            position: absolute;
+            top: 0;
+            right: 5%;
+            box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.1);
+            padding-left: 42px;
+            padding-top: 48px;
+            padding-bottom: 48px;
+        }
+        @include desktopxl {
+            display: flex;
+            top: 0;
+            right: 5%;
         }
         top: 0;
-        left: 60%;
         max-width: 454px;
         height: calc(100% - 0.75%);
         width: 100%;
         background-color: #fff;
         flex-direction: column;
 
-        ul{
+        ul {
             margin-top: 40px;
             display: flex;
             gap: 38px;
             flex-direction: column;
-            li{
+            li {
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
-                h1{
+                h1 {
                     display: flex;
                     align-items: center;
                     gap: 9px;
-                    color: #2C2C2C;
+                    color: #2c2c2c;
                     font-size: 20px;
                     font-weight: 500;
                 }
-                p{
+                p {
                     font-size: 20px;
                     color: #444;
                     line-height: 28px;
@@ -67,11 +109,61 @@
         }
 
         &-title {
+            display: none;
+            @include tablet {
+                display: block;
+            }
+
             font-family: var(--font-source);
             font-size: 41px;
             font-weight: 600;
             color: #2c2c2c;
             text-transform: uppercase;
+        }
+    }
+    .iframe__text-mobile {
+        display: block;
+        @include tablet {
+            display: none;
+        }
+        margin-bottom: 60px;
+        ul {
+            margin-top: 40px;
+            display: flex;
+            gap: 38px;
+            flex-direction: column;
+            li {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                h1 {
+                    display: flex;
+                    align-items: center;
+                    gap: 9px;
+                    color: #2c2c2c;
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+                p {
+                    font-size: 20px;
+                    color: #444;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+    .iframe__mobile {
+        text-align: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: 100%;
+        min-width: 280px;
+        border: 1px #c4c4c4 solid;
+        height: 268px;
+        filter: grayscale(1);
+        display: block;
+        @include tablet {
+            display: none;
         }
     }
 }

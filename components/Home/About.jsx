@@ -33,7 +33,9 @@ export default function About() {
                 <button>Ətraflı</button>
               </div>
             </div>
-            <div className="card__right"></div>
+            <div className="card__right">
+              <img src="/images/photo.jpg" alt="" />
+            </div>
           </div>
         </div>
         <Services />

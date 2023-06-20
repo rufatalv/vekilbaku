@@ -10,7 +10,7 @@ export default function ServiceCard({ data }) {
       <Image src={image} alt="logo" width={55} height={55} />
       <h1 className="service__title">{title}</h1>
       <p className="service__description">{description}</p>
-      <a className="service__link"  href="services/service">
+      <a className="service__link"  href="/services/service">
         Ətraflı
       </a>
     </div>

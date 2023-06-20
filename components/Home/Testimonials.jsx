@@ -26,7 +26,7 @@ export default function Testimonials() {
             768: {
               slidesPerView: 1,
               spaceBetween: 30,
-              centeredSlides: true
+              centeredSlides: true,
             },
             1200: {
               slidesPerView: 2,
@@ -39,7 +39,9 @@ export default function Testimonials() {
         >
           <SwiperSlide>
             <div className="testimonial">
-              <img src="/images/testimonial.png" alt="Logo" />
+              <div className="testimonial__img">
+                <img src="/images/testimonial.png" alt="Logo" />
+              </div>
               <div className="testimonial__info">
                 <div className="testimonial__title">Kənan Əhmədov</div>
                 <p className="testimonial__description">
@@ -52,7 +54,9 @@ export default function Testimonials() {
           </SwiperSlide>
           <SwiperSlide>
             <div className="testimonial">
-              <img src="/images/testimonial.png" alt="Logo" />
+              <div className="testimonial__img">
+                <img src="/images/testimonial.png" alt="Logo" />
+              </div>
               <div className="testimonial__info">
                 <div className="testimonial__title">Kənan Əhmədov</div>
                 <p className="testimonial__description">
@@ -65,20 +69,9 @@ export default function Testimonials() {
           </SwiperSlide>
           <SwiperSlide>
             <div className="testimonial">
-              <img src="/images/testimonial.png" alt="Logo" />
-              <div className="testimonial__info">
-                <div className="testimonial__title">Kənan Əhmədov</div>
-                <p className="testimonial__description">
-                  “İşgüzar nüfuzumun müdafiəsi üçün Emin bəyə müraciət etdim.
-                  Məhkəmədə əvvəlcə haqsızlıqla üzləşsəm də, sonradan hüquqlarım
-                  vəkilimin dəstəyi ilə bərpa olundu. Təşəkkürümü bildirirəm.”
-                </p>
+              <div className="testimonial__img">
+                <img src="/images/testimonial.png" alt="Logo" />
               </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="testimonial">
-              <img src="/images/testimonial.png" alt="Logo" />
               <div className="testimonial__info">
                 <div className="testimonial__title">Kənan Əhmədov</div>
                 <p className="testimonial__description">

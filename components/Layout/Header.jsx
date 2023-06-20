@@ -129,7 +129,7 @@ export default function Header() {
                 </ul>
               </li>
               <li className="menu__item">
-                <Link href="#" className="menu__item-link">
+                <Link href="/videos" className="menu__item-link">
                   Videoçarxlar
                 </Link>
               </li>
