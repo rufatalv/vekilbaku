@@ -26,9 +26,11 @@ export default function Videos() {
         <div className="videos__list">
           {VIDEOS &&
             VIDEOS.map((video) => (
-              <div key={video.id} className="video">
-                <img src={video.image} alt="thumbnail" />
-                <div className="video__text">
+              <div key={video.id} className="videocard">
+                <div className="videocard__inner">
+                  <img src={video.image} alt="" />
+                </div>
+                <div className="videocard__text">
                   <h1>{video.title}</h1>
                 </div>
               </div>

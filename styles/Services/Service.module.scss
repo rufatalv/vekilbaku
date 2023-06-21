@@ -27,9 +27,16 @@
             &__inner {
                 display: flex;
                 justify-content: space-between;
+                flex-direction: column;
                 gap: 40px;
-                &:nth-child(2) {
-                    flex-direction: row-reverse;
+                img {
+                    width: 100%;
+                }
+                @include desktop {
+                    flex-direction: row;
+                    &:nth-child(2) {
+                        flex-direction: row-reverse;
+                    }
                 }
                 .text {
                     max-width: 650px;
@@ -37,9 +44,13 @@
                     flex-direction: column;
                     gap: 16px;
                     p {
-                        font-size: 20px;
+                        font-size: 16px;
+                        line-height: 28px;
                         color: #707070;
-                        line-height: 32px;
+                        @include tablet {
+                            font-size: 20px;
+                            line-height: 32px;
+                        }
                     }
                 }
             }

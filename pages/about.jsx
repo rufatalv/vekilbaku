@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "@/styles/About/About.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
-import { Navigation, Pagination } from "swiper";
+import { Autoplay, Navigation, Pagination } from "swiper";
 
 export default function About() {
   return (
@@ -87,11 +87,24 @@ export default function About() {
             <Swiper
               className="swiper"
               freeMode="true"
-              modules={[Pagination, Navigation]}
+              modules={[Pagination, Navigation, Autoplay]}
+              autoplay={{
+                delay: 1000,
+              }}
               // navigation
               // pagination={{ clickable: true }}
               loop={true}
-              slidesPerView={3}
+              breakpoints={{
+                320: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                  autoHeight: true,
+                },
+                768: {
+                  slidesPerView: 3,
+                  spaceBetween: 30,
+                },
+              }}
               spaceBetween={20}
             >
               <div className="container">

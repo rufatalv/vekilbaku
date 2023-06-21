@@ -1,3 +1,4 @@
+@import "../container.scss";
 .error :global {
     position: relative;
     height: 100%;
@@ -8,17 +9,31 @@
         background-image: url("/images/404-full.png");
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: 60% bottom;
+        background-position: 50% bottom;
+        @include tablet {
+            background-position: 60% bottom;
+        }
     }
     .container {
         padding-top: 80px;
-        padding-bottom: 160px;
+        padding-bottom: 360px;
+        @include tablet {
+            padding-top: 80px;
+            padding-bottom: 160px;
+        }
     }
     .text {
         position: relative;
+        text-align: center;
+        @include tablet {
+            text-align: start;
+        }
         z-index: 5;
         .error {
-            font-size: 180px;
+            font-size: 90px;
+            @include tablet {
+                font-size: 180px;
+            }
             margin: 0;
             padding: 0;
             font-family: var(--font-source);
@@ -29,10 +44,17 @@
             font-family: var(--font-source);
             font-size: 20px;
             color: #282828;
+            display: none;
+            @include tablet {
+                display: block;
+            }
             margin-bottom: 30px;
         }
         .btn {
-            background: linear-gradient(90deg, #9a6b45 0%, #d4b192 100%);
+            background: #9a6b45;
+            @include tablet {
+                background: linear-gradient(90deg, #9a6b45 0%, #d4b192 100%);
+            }
             box-shadow: 1px 5px 20px rgba(0, 0, 0, 0.2);
             cursor: pointer;
             font-family: var(--font-roboto);

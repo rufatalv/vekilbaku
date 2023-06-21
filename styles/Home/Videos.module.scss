@@ -48,29 +48,58 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            img {
-                position: relative;
-                width: 100%;
-                max-width: 385px;
-            }
-            .video {
+            .videocard {
+                background: #fff;
+                display: flex;
+                cursor: pointer;
+                flex-direction: column;
                 @include tablet {
                     max-width: 385px;
                 }
-                background: #fff;
-                display: flex;
-                flex-direction: column;
-                &__text {
-                    padding: 22px 0 20px 20px;
-                    border: 1px #c4c4c4 solid;
-                }
-                h1 {
-                    @include mobilelg {
-                        font-size: 20px;
+                &:hover {
+                    .videocard__inner {
+                        &::before{
+                            opacity: 1;
+                        }
                     }
-                    font-size: 16px;
-                    font-weight: 500;
-                    color: #2c2c2c;
+                }
+                &__inner {
+                    position: relative;
+                    transition: all;
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                        max-width: 385px;
+                    }
+                    &::before {
+                        background: rgba(0, 0, 0, 0.3);
+                        position: absolute;
+                        content: "";
+                        left: 0;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 100%;
+                        transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+                        opacity: 0;
+                    }
+                }
+                &__text {
+                    padding: 22px 10px 20px 10px;
+                    @include mobilelg {
+                        padding: 22px 20px 20px 20px;
+                    }
+                    border: 1px #c4c4c4 solid;
+                    h1 {
+                        @include mobilelg {
+                            font-size: 20px;
+                        }
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: #2c2c2c;
+                    }
                 }
             }
         }

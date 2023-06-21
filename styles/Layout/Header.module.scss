@@ -125,20 +125,29 @@
             }
         }
         .down {
-            display: none;
-            background-color: #f6f6f6;
             @include desktop {
+                background-color: #f6f6f6;
                 display: block;
+                height: 100%;
+                clip-path: inset(0 0 0 0);
             }
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
             &__inner {
                 display: flex;
                 justify-content: center;
+                padding-top: 10px;
+                padding-bottom: 20px;
                 .menu {
                     width: 100%;
                     max-width: 920px;
                     display: flex;
-                    gap: 72px;
+                    flex-direction: column;
+                    gap: 20px;
+                    @include desktop {
+                        flex-direction: row;
+                        gap: 72px;
+                    }
                     &__item {
                         font-size: 18px;
                         font-weight: 500;
@@ -168,7 +177,10 @@
                                         color: #9a6b45;
                                     }
                                     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-                                    color: #444;
+                                    @include desktop {
+                                        color: #444;
+                                    }
+                                    color: #fff;
                                 }
                             }
                         }
@@ -204,15 +216,22 @@
                         }
                         &-link {
                             transition: all 0.5s ease-in-out;
-                            color: #2c2c2c;
+                            color: #fff;
+                            @include desktop {
+                                color: #2c2c2c;
+                            }
                             display: inline-block;
                             font-size: 18px !important;
                             font-weight: 500;
                             display: flex;
                             align-items: center;
                             gap: 8px;
-                            padding-top: 30px;
-                            padding-bottom: 30px;
+                            // padding-top: 30px;
+                            // padding-bottom: 30px;
+                            @include desktop {
+                                padding-top: 30px;
+                                padding-bottom: 30px;
+                            }
                             .icon {
                                 transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
                                 font-size: 12px;
