@@ -17,7 +17,7 @@ export default function Contacts() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <div className="bg"></div>
+      <div className="bg"></div>
       <div className="content">
         <Breadcrumb title={"ƏLAQƏ"} />
         <div className="container">
@@ -58,7 +58,7 @@ export default function Contacts() {
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
-      </div> */}
+      </div>
     </div>
   );
 }

@@ -6,12 +6,12 @@
     top: 0;
     left: 0;
     right: 0;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: 250;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     .header__inner {
         display: flex;
         flex-direction: column;
-        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         background: #fff;
         &.mobile {
             background: #443939;
@@ -24,6 +24,18 @@
                     height: 58px;
                     background: url("../../public/images/header-bg.png");
                     background-size: cover;
+                    @include desktop {
+                        width: 150px;
+                        background: url("../../public/images/header-logo.png");
+                        height: 88px;
+                    }
+                }
+            }
+            .down {
+                height: calc(100vh - 98px);
+                display: block; /*  */
+                @include desktop {
+                    height: 100%;
                 }
             }
         }
@@ -125,35 +137,93 @@
             }
         }
         .down {
+            display: none;
+            background: #443939;
             @include desktop {
                 background-color: #f6f6f6;
                 display: block;
-                height: 100%;
-                clip-path: inset(0 0 0 0);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
             }
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-            transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
             &__inner {
                 display: flex;
                 justify-content: center;
-                padding-top: 10px;
-                padding-bottom: 20px;
                 .menu {
                     width: 100%;
                     max-width: 920px;
-                    display: flex;
                     flex-direction: column;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     gap: 20px;
+                    text-transform: uppercase;
                     @include desktop {
-                        flex-direction: row;
+                        display: flex;
+                        justify-content: center;
+                        text-transform: none;
+                        align-items: start;
                         gap: 72px;
+                        flex-direction: row;
                     }
                     &__item {
                         font-size: 18px;
                         font-weight: 500;
                         color: #2c2c2c;
+                        &:nth-child(1) {
+                            order: 2;
+                            padding-top: 32px;
+                        }
+                        &:nth-child(2) {
+                            order: 3;
+                        }
+                        &:nth-child(3) {
+                            order: 4;
+                        }
+                        &:nth-child(4) {
+                            order: 5;
+                        }
+                        &:nth-child(5) {
+                            order: 6;
+                        }
+                        @include desktop {
+                            &:nth-child(1) {
+                                order: 1;
+                                padding-top: 0;
+                            }
+                            &:nth-child(2) {
+                                order: 2;
+                            }
+                            &:nth-child(3) {
+                                order: 3;
+                            }
+                            &:nth-child(4) {
+                                order: 4;
+                            }
+                            &:nth-child(5) {
+                                order: 5;
+                            }
+                            &:nth-child(6) {
+                                order: 6;
+                            }
+                        }
                         &.lang-dropdown {
                             position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            gap: 60px;
+                            padding-bottom: 24px;
+                            border-bottom: 1px #c4c4c4 solid;
+                            @include desktop {
+                                display: block;
+                                gap: 0;
+                                padding-bottom: 0;
+                            }
+                            .icon {
+                                display: none;
+                                @include desktop {
+                                    display: block;
+                                }
+                            }
                             &:hover {
                                 .lang__menu {
                                     clip-path: inset(0 0 0 0);
@@ -161,74 +231,117 @@
                             }
                         }
                         .lang__menu {
-                            background: #fff;
-                            border-top: 2px solid #9a6b45;
-                            position: absolute;
-                            padding: 20px 20px 10px;
+                            display: flex;
+                            @include desktop {
+                                display: block;
+                                background: #fff;
+                                border-top: 2px solid #9a6b45;
+                                position: absolute;
+                                padding: 20px 20px 10px;
+                                -webkit-clip-path: inset(0 0 100% 0);
+                                clip-path: inset(0 0 100% 0);
+                                gap: 0;
+                            }
                             cursor: auto;
-                            -webkit-clip-path: inset(0 0 100% 0);
-                            clip-path: inset(0 0 100% 0);
                             transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+                            gap: 60px;
                             li {
-                                margin-bottom: 10px;
+                                @include desktop {
+                                    margin-bottom: 10px;
+                                }
                                 a {
                                     font-size: 18px;
                                     &:hover {
                                         color: #9a6b45;
                                     }
                                     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+                                    color: #fff;
                                     @include desktop {
                                         color: #444;
                                     }
-                                    color: #fff;
                                 }
                             }
                         }
                         &.dropdown {
                             position: relative;
+                            display: flex;
+                            @include desktop {
+                                display: block;
+                                text-align: start;
+                            }
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
                             &:hover {
+                                @include desktop {
+                                    .dropdown__menu {
+                                        clip-path: inset(0 0 0 0);
+                                    }
+                                }
+                            }
+                            &.dropdown-open {
                                 .dropdown__menu {
-                                    clip-path: inset(0 0 0 0);
+                                    display: flex;
                                 }
                             }
                         }
                         .dropdown__menu {
-                            background: #fff;
-                            border-top: 2px solid #9a6b45;
-                            position: absolute;
-                            padding: 20px 20px 10px;
-                            width: 250px;
+                            display: none;
+                            flex-direction: column;
+                            align-items: center;
+                            @include desktop {
+                                align-items: start;
+                            }
                             cursor: auto;
-                            -webkit-clip-path: inset(0 0 100% 0);
-                            clip-path: inset(0 0 100% 0);
+                            margin-top: 20px;
+                            @include desktop {
+                                display: block;
+                                width: 250px;
+                                position: absolute;
+                                background: #fff;
+                                border-top: 2px solid #9a6b45;
+                                padding: 20px 20px 10px;
+                                -webkit-clip-path: inset(0 0 100% 0);
+                                clip-path: inset(0 0 100% 0);
+                                margin-top: 0;
+                            }
                             transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
                             li {
                                 margin-bottom: 20px;
                                 a {
-                                    font-size: 18px;
+                                    @include desktop {
+                                        font-size: 18px;
+                                        font-weight: 400;
+                                    }
+                                    color: #fff;
+                                    text-align: center;
+                                    font-size: 20px;
+                                    line-height: 24px;
+                                    text-transform: none;
+                                    font-weight: 300;
                                     &:hover {
                                         color: #9a6b45;
                                     }
                                     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-                                    color: #444;
+                                    color: #fff;
+                                    @include desktop {
+                                        color: #444;
+                                    }
                                 }
                             }
                         }
                         &-link {
                             transition: all 0.5s ease-in-out;
                             color: #fff;
-                            @include desktop {
-                                color: #2c2c2c;
-                            }
                             display: inline-block;
                             font-size: 18px !important;
                             font-weight: 500;
                             display: flex;
                             align-items: center;
                             gap: 8px;
-                            // padding-top: 30px;
-                            // padding-bottom: 30px;
                             @include desktop {
+                                color: #2c2c2c;
                                 padding-top: 30px;
                                 padding-bottom: 30px;
                             }
@@ -240,7 +353,9 @@
                             &:hover {
                                 color: #9a6b45;
                                 .icon {
-                                    transform: rotate(180deg);
+                                    @include desktop {
+                                        transform: rotate(180deg);
+                                    }
                                 }
                             }
                         }

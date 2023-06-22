@@ -16,8 +16,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header() {
-  const [isMobileOpen, setIsMobileOpen] = useState(true);
+  const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [scroll, setScroll] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
 
   useEffect(() => {
     function handleScroll() {
@@ -34,6 +35,9 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const handleDropdown = () => {
+    setDropdown(!dropdown);
+  };
   const openMenu = () => {
     const isNarrowScreen = window.matchMedia("(max-width: 991px)").matches;
     isNarrowScreen && setIsMobileOpen(!isMobileOpen);
@@ -96,10 +100,24 @@ export default function Header() {
                   Haqqımda
                 </Link>
               </li>
-              <li className="menu__item dropdown">
-                <Link href="#services" scroll={true} className="menu__item-link">
+              <li
+                className={
+                  dropdown
+                    ? "menu__item dropdown dropdown-open"
+                    : "menu__item dropdown"
+                }
+              >
+                <Link
+                  href="#services"
+                  scroll={true}
+                  className="menu__item-link"
+                >
                   Hüquqi xidmətlər
-                  <FontAwesomeIcon className="icon" icon={faChevronDown} />
+                  <FontAwesomeIcon
+                    className="icon"
+                    onClick={handleDropdown}
+                    icon={faChevronDown}
+                  />
                 </Link>
                 <ul className="dropdown__menu">
                   <li>
@@ -140,7 +158,7 @@ export default function Header() {
               </li>
               <li className="menu__item lang-dropdown">
                 <Link href="#" className="menu__item-link">
-                  Az
+                  AZ
                   <FontAwesomeIcon className="icon" icon={faChevronDown} />
                 </Link>
                 <ul className="lang__menu">
